@@ -1,26 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+import Stars from './components/Stars';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+    return (
+        <div>
+            <h1>Movie Ratings</h1>
+            <Stars count={1} />
+            <Stars count={3} />
+            <Stars count={5} />
+            {/* Invalid count, should render nothing */}
+            <Stars count={6} />
+            <Stars count={-1} />
+        </div>
+    );
+};
 
 export default App;
